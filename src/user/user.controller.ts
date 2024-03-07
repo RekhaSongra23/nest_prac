@@ -10,11 +10,11 @@ import { UserUpdateDto } from "./userupdatedto";
 export class UserController {
   constructor(private readonly Userservice: UserService) {}
 
-  @Post()
-  async creteUsers(@Body() UserDto: UserDto): Promise<User> {
-    const usercreation = await this.Userservice.createUser(UserDto);
-    return usercreation;
-  }
+  // @Post()
+  // async creteUsers(@Body() UserDto: UserDto): Promise<User> {
+  //   const usercreation = await this.Userservice.createUser(UserDto);
+  //   return usercreation;
+  // }
 
   @Get()
   async findAll() {

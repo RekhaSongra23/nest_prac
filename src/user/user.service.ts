@@ -15,10 +15,10 @@ export class UserService {
     @InjectModel(User.name) private userModel: mongoose.Model<User>,
   ) {}
 
-  async createUser(UserDto: UserDto): Promise<User> {
-    const res = await this.userModel.create(UserDto);
-    return res;
-  }
+  // async createUser(UserDto: UserDto): Promise<User> {
+  //   const res = await this.userModel.create(UserDto);
+  //   return res;
+  // }
 
   async findAllUser(): Promise<User[]> {
     const finduser = await this.userModel.find();
