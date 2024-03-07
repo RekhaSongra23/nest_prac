@@ -35,7 +35,7 @@ export class UserController {
   ) {
     try {
       const userup = await this.Userservice.updateUserByid(id, UserUpdateDto);
-      return userup;
+      return `user updated with id ${userup.id} `;  //to return with msg that user is updated,deleted,created etc.
     } catch (err) {
       throw new NotFoundException(err);
     }
@@ -45,7 +45,7 @@ export class UserController {
   async deleteUser(@Param('id') id: mongoose.Types.ObjectId) {
     try {
       const deletedUser1 = await this.Userservice.deleteUserByid(id);
-      return deletedUser1;
+      return `user deleted with id ${deletedUser1.id}`;
     } catch (err) {
       throw new BadRequestException(err);
     }

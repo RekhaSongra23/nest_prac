@@ -14,7 +14,7 @@ import { RoleGuard } from "src/role/roleguars";
 export class BookController {
   constructor(private readonly bookservice: bookService) {}
 
-  // @UserRoles(UserRole.ADMIN, UserRole.VIEWER)
+   @UserRoles(UserRole.ADMIN, UserRole.VIEWER)
   @Post('')
   async creteBook(@Body() BookDto: BookDto): Promise<Book> {
     const cretebok = await this.bookservice.createBook(BookDto);
